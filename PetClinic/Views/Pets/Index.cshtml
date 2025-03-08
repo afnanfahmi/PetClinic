@@ -1,0 +1,27 @@
+﻿@model IEnumerable<PetClinic.Models.Pet>
+
+
+@if (Model != null && Model.Any())
+{
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Age</th>
+            <th>Owner</th>
+        </tr>
+        @foreach (var pet in Model)
+        {
+            <tr>
+                <td>@pet.Name</td>
+                <td>@pet.Type</td>
+                <td>@pet.Age</td>
+                <td>@pet.Owner</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No pets found.</p>
+}

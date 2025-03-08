@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Appointments";
+}
+
+<h2>Your Appointments</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Pet Name</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in Model)
+        {
+            <tr>
+                <td>@appointment.Pet?Name</td>
+                <td>@appointment.AppointmentDate.ToShortDateString()</td>
+                <td><a asp-action="Cancel" asp-route-id="@appointment.Id">Cancel</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

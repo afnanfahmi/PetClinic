@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Add Pet";
+}
+
+<h2>Add a New Pet</h2>
+
+<form asp-controller="Pets" asp-action="Add" method="post">
+    <div>
+        <label for="PetName">Pet Name:</label>
+        <input type="text" id="PetName" name="PetName" class="form-control" required />
+    </div>
+
+    <div>
+        <label for="PetType">Pet Type:</label>
+        <select id="PetType" name="PetType" class="form-control" required>
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Bird">Bird</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="Age">Age:</label>
+        <input type="number" id="Age" name="Age" class="form-control" min="0" required />
+    </div>
+
+    <div>
+        <label for="OwnerName">Owner's Name:</label>
+        <input type="text" id="OwnerName" name="OwnerName" class="form-control" required />
+    </div>
+
+    <div>
+        <label for="MedicalHistory">Medical History:</label>
+        <textarea id="MedicalHistory" name="MedicalHistory" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Pet</button>
+</form>
